@@ -125,23 +125,20 @@ ugly, deformed, blurry, [针对性负面词]
 
 ### 2️⃣ 图像生成 (Kie AI)
 
-**API 端点：**
+**API 端点 (api.heang.top):**
 ```
-POST https://api.kie.ai/api/v1/jobs/createTask
+POST https://api.heang.top/v1/images/generations
 ```
 
 **请求格式：**
 ```json
 {
-  "model": "nano-banana-pro",
-  "callBackUrl": "https://your-domain.com/api/callback",
-  "input": {
-    "prompt": "图像描述（最长 10000 字符）",
-    "image_input": [],
-    "aspect_ratio": "16:9",
-    "resolution": "2K",
-    "output_format": "png"
-  }
+  "model": "doubao-nanobanana-pro-260103",
+  "prompt": "图像描述（最长 10000 字符）",
+  "image_input": [],
+  "aspect_ratio": "16:9",
+  "resolution": "2K",
+  "output_format": "png"
 }
 ```
 
@@ -149,30 +146,59 @@ POST https://api.kie.ai/api/v1/jobs/createTask
 
 | 参数 | 可选值 | 默认值 | 说明 |
 |------|--------|--------|------|
-| `aspect_ratio` | 1:1 / 2:3 / 3:2 / 3:4 / 4:3 / 4:5 / 5:4 / 9:16 / 16:9 / 21:9 / auto | auto | 画幅比例 |
-| `resolution` | 1K / 2K / 4K | 1K | 分辨率 |
+| `aspect_ratio` | 1:1 / 2:3 / 3:2 / 3:4 / 4:3 / 4:5 / 5:4 / 9:16 / 16:9 / 21:9 / adaptive | adaptive | 画幅比例 |
+| `resolution` | 480p / 720p / 1080p / 2K / 4K | 1080p | 分辨率 |
 | `output_format` | png / jpg | png | 输出格式 |
 | `image_input` | URL 数组（最多 8 张） | [] | 参考图片 |
 
 **配置：**
 ```bash
-export KIE_API_KEY="your-api-key-here"
+export KIE_API_KEY="YOUR_API_KEY_HERE"
+export HEANG_BASE_URL="https://api.heang.top"
 ```
 
 ---
 
 ### 3️⃣ 视频生成 (Seedance 2.0)
 
-**6 阶权重提示词结构：**
+**API 端点 (api.heang.top):**
+```
+POST https://api.heang.top/v1/videos/generations
+```
 
+**请求格式：**
+```json
+{
+  "model": "doubao-seedance-2-0-260128",
+  "prompt": [
+    {
+      "shot_id": 1,
+      "description": "中景，男生在黄昏小巷中行走，暖黄色灯光洒在身上",
+      "camera_movement": "缓慢推进镜头"
+    }
+  ],
+  "references": [
+    {
+      "type": "image",
+      "url": "https://example.com/reference1.jpg",
+      "weight": 0.8
+    }
+  ],
+  "parameters": {
+    "resolution": "720p",
+    "fps": 24,
+    "duration": 10,
+    "aspect_ratio": "16:9",
+    "mode": "pro",
+    "generate_audio": true,
+    "watermark": false
+  }
+}
 ```
-Stage 1 [主体 1.5]: 核心角色/物体
-Stage 2 [动作 1.3]: 具体行为/运动
-Stage 3 [场景 1.2]: 环境/背景
-Stage 4 [镜头 1.1]: 视角/运镜
-Stage 5 [光影 1.0]: 光线/色彩
-Stage 6 [风格 0.9]: 艺术风格
-```
+
+**模型选择：**
+- Pro版：`doubao-seedance-2-0-260128` (高质量)
+- Fast版：`doubao-seedance-2-0-fast-260128` (快速)
 
 **命令系统：**
 
@@ -194,6 +220,7 @@ Stage 6 [风格 0.9]: 艺术风格
 | `--resolution` | 分辨率 | 720p |
 | `--mode` | fast / pro | pro |
 | `--watermark` | 添加水印 | false |
+| `--generate_audio` | 生成音频 | true |
 
 **⚠️ 强制规则：每个视频片段必须固定为 10 秒**
 - 所有单镜头视频生成：`--duration 10`
@@ -209,7 +236,8 @@ Stage 6 [风格 0.9]: 艺术风格
 
 **配置：**
 ```bash
-export VOLCENGINE_ARK_API_KEY="your-api-key-here"
+export SEEDANCE_API_KEY="YOUR_API_KEY_HERE"
+export SEEDANCE_BASE_URL="https://api.heang.top"
 ```
 
 ---
