@@ -1,0 +1,39 @@
+name: 内容或模板建议
+description: 建议新的镜头语言、视觉风格、提示词或分镜模板
+title: "[Request] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: 建议类型
+      options:
+        - 镜头语言
+        - 视觉风格
+        - 提示词模板
+        - 分镜工作流
+        - 模型适配
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 使用场景
+      description: 说明目标模型、输入和期望输出
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: 示例与参考
+      description: 请标明第三方资料来源，并避免提交未授权素材
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已搜索现有 Issue 和参考库
+          required: true
+        - label: 示例不包含密钥、隐私或未获授权的商业素材
+          required: true

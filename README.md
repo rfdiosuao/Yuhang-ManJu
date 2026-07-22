@@ -15,7 +15,7 @@
 
 <p>
   <img src="https://img.shields.io/badge/Made%20with-YuHang's%20Brain-FF9A9E?style=for-the-badge" alt="Made with YuHang's Brain">
-  <img src="https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge" alt="Status">
+  <img src="https://img.shields.io/badge/Status-Community%20Preview-45B7D1?style=for-the-badge" alt="Status: Community Preview">
 </p>
 
 <br>
@@ -356,7 +356,7 @@ const styleParams = {
 
 ## 🤝 贡献指南
 
-欢迎贡献新的镜头语言、风格模板和提示词优化！
+欢迎贡献新的镜头语言、风格模板和提示词优化。提交前请先阅读 [`CONTRIBUTING.md`](CONTRIBUTING.md)，安全与内容使用边界见 [`SECURITY.md`](SECURITY.md)。
 
 ```bash
 # Fork 并创建分支
@@ -370,6 +370,10 @@ git push origin feature/new-style
 # 创建 Pull Request
 ```
 
+## 📄 许可证状态
+
+本仓库目前尚未声明开源许可证。代码和内容公开可见，但不代表自动授予复制、修改或再分发权；如需在商业项目、课程或其他仓库中复用，请先通过 Issue 联系作者确认授权范围。
+
 ---
 
 ## 👤 关于作者
@@ -378,10 +382,9 @@ git push origin feature/new-style
 
 |  |  |
 |--|--|
-| **YuHang** | 一人公司践行者 · AI应用开发者 |
-| 🌐 | [heang.top](https://heang.top) |
+| **YuHang** | 独立开发者 · AI Agent Builder |
 | 💻 | [GitHub](https://github.com/rfdiosuao) |
-| 🧬 | [YuHang-Skill](https://github.com/rfdiosuao/YuHang-Skill) - 我的数字分身 |
+| 🧩 | [AgentSkill](https://github.com/rfdiosuao/AgentSkill) - 可复用 Agent Skill 与工作流 |
 
 </div>
 
