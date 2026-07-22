@@ -6,6 +6,8 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF6B6B,100:4ECDC4,200:45B7D1,300:96CEB4&height=200&section=header&text=ManJu%20Creator&fontSize=40&fontAlignY=35&desc=AI%20Video%20Prompt%20Engineering&descAlignY=55&descSize=18" />
 
+[中文](README.md) | [English](README.en.md)
+
 <p>
   <img src="https://img.shields.io/badge/Version-1.0.0-FF6B6B?style=for-the-badge&logo=semantic-release&logoColor=white" alt="Version">
   <img src="https://img.shields.io/badge/AI%20Video-Wan2.1-4ECDC4?style=for-the-badge&logo=video&logoColor=white" alt="AI Video">
